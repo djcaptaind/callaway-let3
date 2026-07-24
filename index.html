@@ -4,14 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LET 3 — The Supervising Leader</title>
+  <meta name="description" content="Callaway High School Army JROTC LET 3 Digital Leadership Academy">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="top-line"></div>
+
+  <div class="command-strip">
+    <div class="wrap command-strip-inner">
+      <span><b>MISSION STATUS</b> ACTIVE</span>
+      <span><b>CURRENT OPERATION</b> <span id="strip-operation">MISSION 00</span></span>
+      <span><b>NEXT FORMATION</b> TUE / WED</span>
+      <span><b>READINESS</b> <span id="readiness-value">92%</span></span>
+    </div>
+  </div>
+
+  <div class="ticker" aria-label="Battalion announcements">
+    <div class="ticker-label">BATTALION NET</div>
+    <div class="ticker-window">
+      <div class="ticker-track" id="ticker-track"></div>
+    </div>
+  </div>
 
   <header class="hero">
     <div class="hero-shade"></div>
@@ -46,13 +64,43 @@
   </header>
 
   <main id="main">
+    <section class="section operation-section">
+      <div class="wrap operation-grid">
+        <article class="operation-card">
+          <div class="section-tag">CURRENT OPERATION</div>
+          <div class="operation-title-row">
+            <div>
+              <p class="operation-code" id="operation-code">MISSION 00</p>
+              <h2 id="operation-title">Report for Duty</h2>
+            </div>
+            <span class="active-pill">ACTIVE</span>
+          </div>
+          <p class="lead" id="operation-summary">Complete battalion reception, verify course access, and earn clearance for the next mission.</p>
+          <div class="progress-meta"><span>Mission Progress</span><strong id="progress-text">40%</strong></div>
+          <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+          <a class="button primary compact" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">Continue Mission</a>
+        </article>
+
+        <aside class="countdown-card">
+          <div class="section-tag">NEXT MAJOR OPERATION</div>
+          <p class="countdown-name" id="countdown-name">WESTERN REGIONAL DRILL</p>
+          <div class="countdown" id="countdown">
+            <div><strong id="days">00</strong><span>DAYS</span></div>
+            <div><strong id="hours">00</strong><span>HRS</span></div>
+            <div><strong id="minutes">00</strong><span>MIN</span></div>
+            <div><strong id="seconds">00</strong><span>SEC</span></div>
+          </div>
+          <p class="countdown-date" id="countdown-date">25 OCTOBER 2026</p>
+        </aside>
+      </div>
+    </section>
+
     <section class="section dashboard">
       <div class="wrap">
         <div class="section-head">
           <div><p class="eyebrow">PRIMARY OPERATIONS</p><h2>Command Dashboard</h2></div>
           <p>Move directly to the Canvas tools used throughout the course.</p>
         </div>
-
         <div class="card-grid">
           <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top"><span class="number">01</span><span class="icon">▦</span><h3>Modules</h3><p>Lessons, weekly content, and learning sequence.</p><b>Open Modules →</b></a>
           <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/assignments" target="_top"><span class="number">02</span><span class="icon">✓</span><h3>Assignments</h3><p>Requirements, due dates, and submissions.</p><b>Open Assignments →</b></a>
@@ -65,6 +113,31 @@
       </div>
     </section>
 
+    <section class="section action-center">
+      <div class="wrap action-grid">
+        <article class="action-card">
+          <p class="panel-kicker">TODAY'S ORDERS</p>
+          <h2>Execute the Standard</h2>
+          <ul class="orders">
+            <li>Read the newest battalion announcement.</li>
+            <li>Complete the next unlocked mission requirement.</li>
+            <li>Review grades and instructor feedback.</li>
+            <li>Prepare for the next uniform or training requirement.</li>
+          </ul>
+        </article>
+        <article class="action-card intent-card">
+          <p class="panel-kicker">COMMANDER'S INTENT</p>
+          <blockquote id="commanders-intent">Every cadet leaves today's class better than they entered.</blockquote>
+          <p class="signature">— LTC DERRICK DAVIS</p>
+        </article>
+        <article class="action-card">
+          <p class="panel-kicker">LEADERSHIP CHALLENGE</p>
+          <h2 id="challenge-title">Strengthen One Teammate</h2>
+          <p class="lead" id="challenge-text">Recognize a specific improvement, help solve a problem, or coach a cadet respectfully.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section briefing">
       <div class="wrap two-col">
         <article class="panel">
@@ -74,17 +147,61 @@
           <div class="objective"><span>01</span><p><strong>Review the current module</strong><br>Read all instructions before beginning work.</p></div>
           <div class="objective"><span>02</span><p><strong>Complete assigned requirements</strong><br>Submit work before the posted deadline.</p></div>
           <div class="objective"><span>03</span><p><strong>Prepare to lead</strong><br>Bring materials, maintain standards, and support your team.</p></div>
-          <small>Update these weekly objectives inside <strong>index.html</strong>.</small>
         </article>
 
         <aside class="panel schedule">
-          <p class="panel-kicker">MISSION TOOLS</p>
+          <p class="panel-kicker">UPCOMING OPERATIONS</p>
           <h2>Mission Schedule</h2>
-          <p class="lead">Canvas automatically places dated assignments and quizzes on its calendar.</p>
-          <div class="schedule-item"><span>TUE</span><div><strong>Uniform Day</strong><p>Wear the prescribed uniform and meet appearance standards.</p></div></div>
-          <div class="schedule-item"><span>WED</span><div><strong>Uniform Day</strong><p>Second uniform day for the A/B block schedule.</p></div></div>
+          <div id="events-list"></div>
           <a class="calendar-link" href="https://jacksonps.instructure.com/calendar" target="_top">View Full Canvas Calendar →</a>
         </aside>
+      </div>
+    </section>
+
+    <section class="section recognition">
+      <div class="wrap recognition-grid">
+        <div class="spotlight-photo">
+          <img id="spotlight-image" src="images/cadet-spotlight.jpg" alt="Cadet spotlight">
+          <div class="photo-placeholder" id="photo-placeholder">ADD CADET PHOTO<br>images/cadet-spotlight.jpg</div>
+        </div>
+        <article class="spotlight-copy">
+          <p class="eyebrow">CADET RECOGNITION</p>
+          <h2 id="spotlight-heading">Cadet Spotlight</h2>
+          <p class="spotlight-name" id="spotlight-name">CADET NAME</p>
+          <p class="spotlight-award" id="spotlight-award">Outstanding Leadership</p>
+          <p id="spotlight-description">Recognize uniform excellence, service, academic achievement, improvement, or team leadership.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section explore">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">VERSION 4.0 FOUNDATION</p><h2>Explore the Battalion</h2></div>
+          <p>Team pages are prepared as the next expansion of the Digital Leadership Academy.</p>
+        </div>
+        <div class="team-grid">
+          <a href="#" class="team-card disabled"><span>01</span><h3>Drill Team</h3><p>Competitions, schedule, awards, and gallery.</p><b>COMING IN V4.0</b></a>
+          <a href="#" class="team-card disabled"><span>02</span><h3>Raiders</h3><p>Training, events, conditioning, and results.</p><b>COMING IN V4.0</b></a>
+          <a href="#" class="team-card disabled"><span>03</span><h3>JLAB</h3><p>Academic resources, practice, and national achievements.</p><b>COMING IN V4.0</b></a>
+          <a href="#" class="team-card disabled"><span>04</span><h3>Color Guard</h3><p>Standards, ceremonies, competitions, and media.</p><b>COMING IN V4.0</b></a>
+          <a href="#" class="team-card disabled"><span>05</span><h3>Saber Team</h3><p>Training, ceremonies, traditions, and gallery.</p><b>COMING IN V4.0</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlights">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">OUR BATTALION</p><h2>Chargers in Action</h2></div>
+          <p>Achievements, programs, and experiences that define the 4th Battalion.</p>
+        </div>
+        <div class="highlight-grid">
+          <article><strong>★</strong><h3>Military Star School</h3><p>Recognized for excellence, opportunity, and support for military-connected students.</p></article>
+          <article><strong>◆</strong><h3>JLAB Nationals</h3><p>Advancing to national competition through academic preparation and teamwork.</p></article>
+          <article><strong>▲</strong><h3>Leadership Camps</h3><p>JCLC, STEM, health careers, flight, and adventure experiences.</p></article>
+          <article><strong>✦</strong><h3>Service & Ceremony</h3><p>Color Guard, Saber Team, Veterans Day, and community service.</p></article>
+        </div>
       </div>
     </section>
 
@@ -102,6 +219,6 @@
     </section>
   </main>
 
-  <footer><div class="wrap footer-inner"><div><strong>CALLAWAY HIGH SCHOOL JROTC</strong><p>4th Battalion · Chargers</p></div><p>LET 3 — The Supervising Leader</p></div></footer>
+  <footer><div class="wrap footer-inner"><div><strong>CALLAWAY HIGH SCHOOL JROTC</strong><p>4th Battalion · Chargers</p></div><p>LET 3 — The Supervising Leader · Version 3.0+</p></div></footer>
 </body>
 </html>
