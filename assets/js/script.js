@@ -14,6 +14,7 @@ function updateEventCountdown(){
   const days = document.getElementById("event-days");
   const hours = document.getElementById("event-hours");
   const minutes = document.getElementById("event-minutes");
+  const seconds = document.getElementById("event-seconds");
 
   if(name) name.textContent = EVENT.name;
   if(date) date.textContent = EVENT.display;
@@ -22,16 +23,19 @@ function updateEventCountdown(){
     if(days) days.textContent = "00";
     if(hours) hours.textContent = "00";
     if(minutes) minutes.textContent = "00";
+    if(seconds) seconds.textContent = "00";
     return;
   }
 
   const d = Math.floor(distance / 86400000);
   const h = Math.floor((distance % 86400000) / 3600000);
   const m = Math.floor((distance % 3600000) / 60000);
+  const s = Math.floor((distance % 60000) / 1000);
 
   if(days) days.textContent = String(d).padStart(2,"0");
   if(hours) hours.textContent = String(h).padStart(2,"0");
   if(minutes) minutes.textContent = String(m).padStart(2,"0");
+  if(seconds) seconds.textContent = String(s).padStart(2,"0");
 }
 
 function initializeMenu(){
@@ -48,5 +52,5 @@ function initializeMenu(){
 document.addEventListener("DOMContentLoaded", () => {
   initializeMenu();
   updateEventCountdown();
-  setInterval(updateEventCountdown, 60000);
+  setInterval(updateEventCountdown, 1000);
 });

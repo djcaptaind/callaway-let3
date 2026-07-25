@@ -141,7 +141,7 @@ button{font:inherit}
 }
 .event-copy h2{margin:5px 0 4px;font:700 1.6rem Oswald;text-transform:uppercase}
 .event-copy p{margin:0;color:var(--muted);font-size:.76rem}
-.countdown{display:grid;grid-template-columns:repeat(3,86px);gap:8px}
+.countdown{display:grid;grid-template-columns:repeat(4,82px);gap:8px}
 .countdown div{text-align:center;padding:10px;background:rgba(3,8,16,.62);border:1px solid var(--line)}
 .countdown strong{display:block;color:var(--orange-light);font:700 1.8rem Oswald}
 .countdown span{color:var(--muted);font-size:.58rem;font-weight:800;text-transform:uppercase}
@@ -288,7 +288,7 @@ footer span{display:block;margin-top:4px}
   .featured-content{padding-bottom:58px}
   .featured h1{font-size:3rem}
   .event-banner{grid-template-columns:1fr}
-  .countdown{grid-template-columns:repeat(3,1fr)}
+  .countdown{grid-template-columns:repeat(2,1fr)}
   .weekly-heading,.rail-heading{align-items:flex-start;flex-direction:column}
   .quick-rail,.highlight-grid,.weekly-priorities{grid-template-columns:1fr}
   .family-actions,.featured-actions{flex-direction:column;align-items:stretch}
@@ -366,4 +366,13 @@ footer span{display:block;margin-top:4px}
       linear-gradient(0deg,var(--ink),transparent 48%),
       url("../../images/homepage/hero.jpg") 58% center/cover no-repeat;
   }
+}
+
+/* VERSION 9.0 FINAL CORRECTIONS */
+.countdown div{min-width:0}
+@media(max-width:900px){
+  .countdown{grid-template-columns:repeat(4,minmax(64px,1fr))}
+}
+@media(max-width:560px){
+  .countdown{grid-template-columns:repeat(2,1fr)}
 }
