@@ -1,98 +1,103 @@
-const SITE_CONFIG = {
-  operation: {
-    code: "MISSION 00",
-    title: "Report for Duty",
-    summary: "Complete battalion reception, verify course access, and earn clearance for the next mission.",
-    progress: 40
-  },
-  readiness: 92,
-  countdown: {
-    name: "Western Regional Drill",
-    date: "2026-10-25T08:00:00-05:00",
-    displayDate: "25 OCTOBER 2026"
-  },
-  announcements: [
-    "Uniform inspection Tuesday and Wednesday",
+const CONFIG = {
+  mission: {code:"MISSION 00", title:"Report for Duty", progress:40},
+  readiness:92,
+  announcements:[
     "Review the newest Canvas announcement before class",
     "Complete the next unlocked Mission 00 requirement",
-    "Team leaders: verify accountability and equipment"
-  ],
-  commandersIntent: "Every cadet leaves today's class better than they entered.",
-  leadershipChallenge: {
-    title: "Strengthen One Teammate",
-    text: "Recognize a specific improvement, help solve a problem, or coach a cadet respectfully."
-  },
-  events: [
-    {date: "TUE", title: "Uniform Day", detail: "Wear the prescribed uniform and meet appearance standards."},
-    {date: "WED", title: "Uniform Day", detail: "Second uniform day for the A/B block schedule."},
-    {date: "UPDATE", title: "Next Battalion Event", detail: "Replace this entry inside script.js."}
-  ],
-  spotlight: {
-    heading: "Cadet Spotlight",
-    name: "CADET NAME",
-    award: "Outstanding Leadership",
-    description: "Recognize uniform excellence, service, academic achievement, improvement, or team leadership."
-  }
+    "Team leaders: verify accountability and equipment",
+    "Uniform inspection Tuesday and Wednesday"
+  ]
 };
-
-function setText(id, value){
-  const el = document.getElementById(id);
-  if(el) el.textContent = value;
+function setText(id,v){const e=document.getElementById(id);if(e)e.textContent=v}
+function initTicker(){
+  const t=document.getElementById("ticker-track");
+  if(t)t.innerHTML=[...CONFIG.announcements,...CONFIG.announcements].map(x=>`<span>${x}</span>`).join("");
 }
+document.addEventListener("DOMContentLoaded",()=>{
+  initTicker();
+  setText("mission-code",CONFIG.mission.code);
+  setText("mission-title",CONFIG.mission.title);
+  setText("mission-progress",`${CONFIG.mission.progress}%`);
+  const p=document.getElementById("mission-bar");if(p)p.style.width=`${CONFIG.mission.progress}%`;
+  setText("ready-value",`${CONFIG.readiness}%`);
+  const b=document.querySelector(".menu-btn"),n=document.querySelector(".navlinks");
+  if(b&&n)b.addEventListener("click",()=>n.classList.toggle("open"));
+});
 
-function initializePage(){
-  const c = SITE_CONFIG;
-  setText("operation-code", c.operation.code);
-  setText("strip-operation", c.operation.code);
-  setText("operation-title", c.operation.title);
-  setText("operation-summary", c.operation.summary);
-  setText("progress-text", `${c.operation.progress}%`);
-  document.getElementById("progress-fill").style.width = `${Math.max(0, Math.min(100, c.operation.progress))}%`;
-  setText("readiness-value", `${c.readiness}%`);
-  setText("countdown-name", c.countdown.name);
-  setText("countdown-date", c.countdown.displayDate);
-  setText("commanders-intent", c.commandersIntent);
-  setText("challenge-title", c.leadershipChallenge.title);
-  setText("challenge-text", c.leadershipChallenge.text);
-  setText("spotlight-heading", c.spotlight.heading);
-  setText("spotlight-name", c.spotlight.name);
-  setText("spotlight-award", c.spotlight.award);
-  setText("spotlight-description", c.spotlight.description);
 
-  const ticker = document.getElementById("ticker-track");
-  ticker.innerHTML = [...c.announcements, ...c.announcements].map(item => `<span>${item}</span>`).join("");
-
-  const events = document.getElementById("events-list");
-  events.innerHTML = c.events.map(event => `
-    <div class="schedule-item">
-      <span>${event.date}</span>
-      <div><strong>${event.title}</strong><p>${event.detail}</p></div>
-    </div>`).join("");
-
-  const image = document.getElementById("spotlight-image");
-  const placeholder = document.getElementById("photo-placeholder");
-  image.addEventListener("error", () => {
-    image.style.display = "none";
-    placeholder.style.display = "flex";
+function animateCounters(){
+  const counters = document.querySelectorAll(".counter");
+  counters.forEach(counter => {
+    const target = Number(counter.dataset.target || counter.textContent);
+    if (!Number.isFinite(target)) return;
+    const duration = 900;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min(1, (now - start) / duration);
+      counter.textContent = Math.floor(progress * target);
+      if(progress < 1) requestAnimationFrame(tick);
+      else counter.textContent = target;
+    }
+    requestAnimationFrame(tick);
   });
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
 }
+document.addEventListener("DOMContentLoaded", animateCounters);
 
-function updateCountdown(){
-  const target = new Date(SITE_CONFIG.countdown.date).getTime();
-  let distance = target - Date.now();
-  if(Number.isNaN(target)) return;
-  if(distance < 0) distance = 0;
-  const days = Math.floor(distance / 86400000);
-  const hours = Math.floor((distance % 86400000) / 3600000);
-  const minutes = Math.floor((distance % 3600000) / 60000);
-  const seconds = Math.floor((distance % 60000) / 1000);
-  setText("days", String(days).padStart(2,"0"));
-  setText("hours", String(hours).padStart(2,"0"));
-  setText("minutes", String(minutes).padStart(2,"0"));
-  setText("seconds", String(seconds).padStart(2,"0"));
+function updateSchoolCountdown(){
+  const event = {
+    name: "Adventure Training Unit",
+    target: "2026-09-19T08:00:00-05:00",
+    display: "19 SEPTEMBER 2026",
+    status: "Prepare for Adventure Training Unit."
+  };
+
+  const target = new Date(event.target).getTime();
+  const now = Date.now();
+  const distance = target - now;
+
+  const nameEl = document.getElementById("event-name");
+  const dateEl = document.getElementById("event-display-date");
+  const statusEl = document.getElementById("event-status-text");
+  if(nameEl) nameEl.textContent = event.name.toUpperCase();
+  if(dateEl) dateEl.textContent = event.display;
+  if(statusEl) statusEl.textContent = event.status;
+
+  const daysEl = document.getElementById("school-days");
+  const hoursEl = document.getElementById("school-hours");
+  const minutesEl = document.getElementById("school-minutes");
+
+  if(distance <= 0){
+    if(daysEl) daysEl.textContent = "00";
+    if(hoursEl) hoursEl.textContent = "00";
+    if(minutesEl) minutesEl.textContent = "00";
+    if(statusEl) statusEl.textContent = "Event day — execute the mission.";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+
+  if(daysEl) daysEl.textContent = String(days).padStart(2, "0");
+  if(hoursEl) hoursEl.textContent = String(hours).padStart(2, "0");
+  if(minutesEl) minutesEl.textContent = String(minutes).padStart(2, "0");
 }
+document.addEventListener("DOMContentLoaded",()=>{updateSchoolCountdown();setInterval(updateSchoolCountdown,60000);});
 
-document.addEventListener("DOMContentLoaded", initializePage);
+
+function initializeCommandersChallenge(){
+  const button = document.getElementById("challenge-complete");
+  if(!button) return;
+  const key = "callaway-let3-commanders-challenge-week1";
+  if(localStorage.getItem(key) === "complete"){
+    button.classList.add("completed");
+    button.textContent = "CHALLENGE COMPLETE";
+  }
+  button.addEventListener("click", () => {
+    const completed = !button.classList.contains("completed");
+    button.classList.toggle("completed", completed);
+    button.textContent = completed ? "CHALLENGE COMPLETE" : "MARK COMPLETE";
+    localStorage.setItem(key, completed ? "complete" : "incomplete");
+  });
+}
+document.addEventListener("DOMContentLoaded", initializeCommandersChallenge);
