@@ -55,3 +55,12 @@ function animateCounters(){
   });
 }
 document.addEventListener("DOMContentLoaded", animateCounters);
+
+function updateSchoolCountdown(){
+  const target=new Date("2026-07-29T08:00:00-05:00").getTime();
+  let d=Math.max(0,target-Date.now());
+  setText("school-days",String(Math.floor(d/86400000)).padStart(2,"0"));
+  setText("school-hours",String(Math.floor((d%86400000)/3600000)).padStart(2,"0"));
+  setText("school-minutes",String(Math.floor((d%3600000)/60000)).padStart(2,"0"));
+}
+document.addEventListener("DOMContentLoaded",()=>{updateSchoolCountdown();setInterval(updateSchoolCountdown,60000);});
