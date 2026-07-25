@@ -36,3 +36,22 @@ document.addEventListener("DOMContentLoaded",()=>{
   const b=document.querySelector(".menu-btn"),n=document.querySelector(".navlinks");
   if(b&&n)b.addEventListener("click",()=>n.classList.toggle("open"));
 });
+
+
+function animateCounters(){
+  const counters = document.querySelectorAll(".counter");
+  counters.forEach(counter => {
+    const target = Number(counter.dataset.target || counter.textContent);
+    if (!Number.isFinite(target)) return;
+    const duration = 900;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min(1, (now - start) / duration);
+      counter.textContent = Math.floor(progress * target);
+      if(progress < 1) requestAnimationFrame(tick);
+      else counter.textContent = target;
+    }
+    requestAnimationFrame(tick);
+  });
+}
+document.addEventListener("DOMContentLoaded", animateCounters);
