@@ -941,3 +941,11 @@ h1 span{display:block;color:var(--gold);font-size:.38em;letter-spacing:.2em;marg
     text-align:left;
   }
 }
+
+/* SINGLE EVENT COUNTER CORRECTION */
+.operational-cards{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+@media(max-width:900px){
+  .operational-cards{grid-template-columns:1fr}
+}
