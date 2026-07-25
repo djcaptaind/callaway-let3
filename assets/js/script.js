@@ -64,3 +64,21 @@ function updateSchoolCountdown(){
   setText("school-minutes",String(Math.floor((d%3600000)/60000)).padStart(2,"0"));
 }
 document.addEventListener("DOMContentLoaded",()=>{updateSchoolCountdown();setInterval(updateSchoolCountdown,60000);});
+
+
+function initializeCommandersChallenge(){
+  const button = document.getElementById("challenge-complete");
+  if(!button) return;
+  const key = "callaway-let3-commanders-challenge-week1";
+  if(localStorage.getItem(key) === "complete"){
+    button.classList.add("completed");
+    button.textContent = "CHALLENGE COMPLETE";
+  }
+  button.addEventListener("click", () => {
+    const completed = !button.classList.contains("completed");
+    button.classList.toggle("completed", completed);
+    button.textContent = completed ? "CHALLENGE COMPLETE" : "MARK COMPLETE";
+    localStorage.setItem(key, completed ? "complete" : "incomplete");
+  });
+}
+document.addEventListener("DOMContentLoaded", initializeCommandersChallenge);

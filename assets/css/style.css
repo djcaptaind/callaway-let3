@@ -540,3 +540,295 @@ h1 span{display:block;color:var(--gold);font-size:.38em;letter-spacing:.2em;marg
 .hero-secondary{min-height:340px}.hero-secondary .hero-grid{padding:46px 0}.hero-secondary h1{font-size:clamp(3rem,5vw,5.1rem)}
 @media(max-width:900px){.school-opening-strip{grid-template-columns:1fr 1fr}.opening-message{grid-column:1/-1;text-align:left}}
 @media(max-width:640px){.school-opening-strip{grid-template-columns:1fr}.opening-countdown{flex-wrap:wrap}.opening-message{grid-column:auto}.command-console{padding:34px 0 44px}}
+
+
+/* FINAL 10/10 POLISH PASS */
+.hero-secondary{min-height:280px}
+.hero-secondary .hero-grid{padding:34px 0}
+.hero-secondary h1{font-size:clamp(2.7rem,4.6vw,4.6rem)}
+.hero-secondary .hero-text,
+.hero-secondary .lead{max-width:590px}
+.hero-secondary .status{transform:scale(.94);transform-origin:right center}
+
+.mission-brief{padding:22px;border-top:3px solid var(--gold)}
+.mission-brief-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+.mission-summary{max-width:620px}
+.mission-facts{display:grid;grid-template-columns:1fr;gap:8px}
+.mission-facts div{padding:10px 12px;background:rgba(7,16,12,.5);border-left:2px solid var(--gold)}
+.mission-facts span,.mission-intent-block span{display:block;color:var(--muted);font-size:.58rem;font-weight:800;letter-spacing:.12em}
+.mission-facts strong{display:block;margin-top:3px;color:var(--gold2);font-size:.77rem}
+.mission-intent-block{margin-top:16px;padding:13px 15px;background:linear-gradient(90deg,rgba(213,173,74,.1),transparent);border:1px solid rgba(213,173,74,.18)}
+.mission-intent-block p{margin:5px 0 0;color:#fff;font:700 1.05rem/1.3 'Barlow Condensed';text-transform:uppercase}
+.mission-objectives{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mission-objectives div{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:11px;background:rgba(7,16,12,.44);border:1px solid rgba(255,255,255,.06)}
+.mission-objectives span{color:var(--gold);font:800 1.25rem 'Barlow Condensed'}
+.mission-objectives p{margin:0;color:var(--muted);font-size:.72rem}
+.mission-action-row{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:14px}
+.mission-action-row .mission-next{flex:1}
+.mission-action-row .btn{flex:0 0 auto}
+
+.tile-progress{display:block;height:5px;margin-top:8px;background:#08130e;overflow:hidden}
+.tile-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.tile-meta{display:inline-block;margin-top:7px;color:var(--gold2);font-size:.55rem;font-weight:800;letter-spacing:.09em}
+.tile-meta.complete{color:#86e0a7}
+.tile-meta.unread{color:#fff;background:#8b2f27;padding:3px 6px}
+.premium-tiles .console-tile{box-shadow:0 8px 18px rgba(0,0,0,.16)}
+.premium-tiles .console-tile:hover{transform:translateY(-5px) scale(1.01);box-shadow:0 18px 34px rgba(0,0,0,.34),0 0 0 1px rgba(213,173,74,.22)}
+.premium-tiles .console-tile:hover .tile-icon{box-shadow:0 0 18px rgba(213,173,74,.18);border-color:var(--gold)}
+
+.battalion-operations{margin-top:18px;padding:22px;background:rgba(8,20,14,.88);border:1px solid rgba(255,255,255,.09)}
+.compact-title{margin-bottom:15px}
+.compact-title h2{font-size:2.3rem}
+.battalion-ops-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ops-brief-card{min-height:170px;padding:18px;background:linear-gradient(145deg,rgba(213,173,74,.06),transparent),var(--panel);border:1px solid rgba(255,255,255,.08)}
+.ops-brief-card strong{display:block;margin-top:12px;font:800 1.45rem/1.05 'Barlow Condensed';text-transform:uppercase}
+.ops-brief-card p{margin:7px 0;color:var(--gold2);font-size:.82rem;font-weight:700}
+.ops-brief-card small{display:block;color:var(--muted);font-size:.69rem}
+.spotlight-mini{border-top:3px solid var(--gold)}
+.goal-value{display:flex;align-items:end;gap:10px;margin-top:12px}
+.goal-value strong{margin:0;color:var(--gold2);font-size:2rem}
+.goal-value span{color:var(--muted);font-size:.58rem;font-weight:800;letter-spacing:.09em}
+.goal-progress{height:8px;margin:12px 0;background:#08130e}
+.goal-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--green2),var(--gold))}
+
+@media(max-width:1100px){
+  .mission-brief-grid{grid-template-columns:1fr}
+  .mission-objectives{grid-template-columns:1fr}
+  .battalion-ops-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .mission-action-row{flex-direction:column;align-items:stretch}
+  .mission-action-row .btn{width:100%}
+  .battalion-ops-grid{grid-template-columns:1fr}
+}
+
+
+/* VERSION 6.0 — FINAL COMMAND CENTER */
+:root{
+  --command:#07100c;
+  --operations:#0c1913;
+  --information:#12251b;
+  --corner:0px;
+  --space-1:8px;
+  --space-2:12px;
+  --space-3:18px;
+  --space-4:24px;
+  --space-5:32px;
+}
+.command-console{
+  background:
+    radial-gradient(circle at 14% 4%,rgba(213,173,74,.12),transparent 24rem),
+    linear-gradient(180deg,var(--command),#08130e);
+}
+.command-console:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.08;
+  background:
+    repeating-radial-gradient(circle at 20% 20%,transparent 0 28px,rgba(213,173,74,.35) 29px 30px,transparent 31px 58px),
+    linear-gradient(135deg,transparent 48%,rgba(213,173,74,.22) 49%,transparent 50%);
+  mask-image:linear-gradient(to bottom,#000,transparent 72%);
+}
+.daily-brief{
+  position:relative;
+  z-index:1;
+  margin-bottom:14px;
+  padding:22px;
+  background:
+    linear-gradient(120deg,rgba(213,173,74,.1),transparent 48%),
+    var(--operations);
+  border-left:4px solid var(--gold);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-right:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.daily-brief-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.daily-brief-head h2{
+  margin:5px 0 0;
+  font-size:2.35rem;
+  line-height:1;
+}
+.brief-date{
+  color:var(--gold2);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+.daily-brief-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:24px;
+  padding-top:16px;
+}
+.brief-message p{margin:0;color:var(--muted)}
+.brief-message blockquote{
+  margin:16px 0 0;
+  font:800 1.5rem/1.15 'Barlow Condensed';
+  color:#fff;
+  text-transform:uppercase;
+}
+.brief-priorities>span{
+  color:var(--gold);
+  font-size:.6rem;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+.brief-priorities ul{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin:10px 0 0;
+  padding:0;
+  list-style:none;
+}
+.brief-priorities li{
+  position:relative;
+  padding:9px 10px 9px 28px;
+  background:rgba(7,16,12,.55);
+  border:1px solid rgba(255,255,255,.06);
+  color:var(--muted);
+  font-size:.72rem;
+}
+.brief-priorities li:before{
+  content:"✓";
+  position:absolute;
+  left:10px;
+  color:var(--gold);
+  font-weight:800;
+}
+
+.command-component,
+.console-dashboard,
+.battalion-operations,
+.ops-brief-card,
+.console-tile{
+  border-radius:var(--corner);
+}
+.command-component{background:linear-gradient(145deg,rgba(213,173,74,.06),transparent 46%),var(--operations)}
+.console-dashboard{background:var(--command)}
+.battalion-operations{background:var(--operations)}
+.ops-brief-card{background:linear-gradient(145deg,rgba(213,173,74,.05),transparent),var(--information)}
+.component-head{
+  padding-bottom:11px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.component-label:before{
+  content:"// ";
+  color:rgba(213,173,74,.55);
+}
+.console-section-title h2,
+.compact-title h2{
+  letter-spacing:.035em;
+}
+.console-tile{
+  border-left:3px solid rgba(213,173,74,.22);
+}
+.console-tile:hover{
+  border-left-color:var(--gold);
+}
+.console-tile>i{
+  position:relative;
+}
+.console-tile>i:after{
+  content:"";
+  display:inline-block;
+  width:20px;
+  height:1px;
+  margin-left:8px;
+  vertical-align:middle;
+  background:var(--gold);
+}
+.challenge-component{
+  border-top:3px solid var(--gold);
+}
+.challenge-component>strong{
+  margin-top:2px;
+  font-size:1.65rem;
+}
+.challenge-footer{
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.challenge-footer span{
+  display:block;
+  color:var(--gold2);
+  font-size:.68rem;
+  font-weight:700;
+  font-style:italic;
+}
+.challenge-complete{
+  width:100%;
+  margin-top:11px;
+  padding:10px 12px;
+  background:transparent;
+  color:var(--gold2);
+  border:1px solid var(--gold);
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  cursor:pointer;
+}
+.challenge-complete:hover,
+.challenge-complete.completed{
+  background:var(--gold);
+  color:var(--command);
+}
+.intelligence-strip small{
+  display:block;
+  margin-top:4px;
+  color:rgba(184,193,187,.7);
+  font-size:.5rem;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+.hero-secondary{
+  border-top:1px solid var(--line);
+}
+.hero-secondary:before{
+  background:linear-gradient(90deg,rgba(4,12,8,.97),rgba(4,12,8,.9) 44%,rgba(4,12,8,.42) 72%,rgba(4,12,8,.68)),linear-gradient(0deg,#07100c 0,transparent 62%);
+}
+@keyframes progressReveal{from{width:0}}
+.modern-progress i,
+.tile-progress i,
+.goal-progress i{
+  animation:progressReveal .9s ease-out both;
+}
+@keyframes riseIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.command-component,
+.console-tile,
+.ops-brief-card{
+  animation:riseIn .45s ease-out both;
+}
+.command-component:nth-child(2),
+.console-tile:nth-child(2),
+.ops-brief-card:nth-child(2){animation-delay:.04s}
+.command-component:nth-child(3),
+.console-tile:nth-child(3),
+.ops-brief-card:nth-child(3){animation-delay:.08s}
+.command-component:nth-child(4),
+.console-tile:nth-child(4),
+.ops-brief-card:nth-child(4){animation-delay:.12s}
+
+@media(max-width:900px){
+  .daily-brief-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .daily-brief-head{flex-direction:column}
+  .brief-priorities ul{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .command-component,.console-tile,.ops-brief-card,.modern-progress i,.tile-progress i,.goal-progress i{animation:none}
+}
