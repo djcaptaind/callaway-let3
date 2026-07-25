@@ -294,3 +294,76 @@ footer span{display:block;margin-top:4px}
   .family-actions,.featured-actions{flex-direction:column;align-items:stretch}
   footer{flex-direction:column}
 }
+
+
+/* VERSION 8.0 — CALLAWAY LOGO + REAL HERO PHOTOGRAPH */
+.brand{
+  min-width:290px;
+}
+.brand-logo{
+  width:72px;
+  height:72px;
+  object-fit:contain;
+  flex:0 0 auto;
+  filter:drop-shadow(0 8px 14px rgba(0,0,0,.45));
+}
+.brand-copy strong{
+  color:#fff;
+  font-size:1.35rem;
+}
+.brand-copy small{
+  color:#c8d2e2;
+}
+.featured{
+  min-height:590px;
+  background:
+    linear-gradient(90deg,rgba(3,8,17,.98) 0%,rgba(3,8,17,.88) 34%,rgba(3,8,17,.37) 64%,rgba(3,8,17,.18) 100%),
+    linear-gradient(0deg,var(--ink) 0%,transparent 46%),
+    url("../../images/homepage/hero.jpg") center 38%/cover no-repeat;
+}
+.featured:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    radial-gradient(circle at 10% 55%,rgba(244,124,32,.16),transparent 22rem),
+    linear-gradient(90deg,rgba(6,11,22,.22),transparent 54%);
+  pointer-events:none;
+}
+.hero-watermark{
+  position:absolute;
+  z-index:2;
+  right:3.5%;
+  bottom:5%;
+  width:clamp(170px,18vw,310px);
+  opacity:.13;
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,.6));
+  pointer-events:none;
+}
+.featured-content{
+  z-index:3;
+}
+.featured h1{
+  max-width:760px;
+  text-shadow:0 8px 24px rgba(0,0,0,.65);
+}
+.featured-tagline,
+.featured-summary{
+  text-shadow:0 3px 12px rgba(0,0,0,.85);
+}
+@media(max-width:1050px){
+  .brand{min-width:0}
+  .brand-logo{width:58px;height:58px}
+}
+@media(max-width:720px){
+  .brand-copy small{display:none}
+  .brand-logo{width:48px;height:48px}
+  .hero-watermark{display:none}
+  .featured{
+    background:
+      linear-gradient(90deg,rgba(3,8,17,.97),rgba(3,8,17,.64)),
+      linear-gradient(0deg,var(--ink),transparent 48%),
+      url("../../images/homepage/hero.jpg") 58% center/cover no-repeat;
+  }
+}
