@@ -64,7 +64,7 @@
   </header>
 
   <main id="main">
-    <section class="section operation-section">
+    <section class="section operation-section operation-overlap">
       <div class="wrap operation-grid">
         <article class="operation-card">
           <div class="section-tag">CURRENT OPERATION</div>
@@ -78,6 +78,12 @@
           <p class="lead" id="operation-summary">Complete battalion reception, verify course access, and earn clearance for the next mission.</p>
           <div class="progress-meta"><span>Mission Progress</span><strong id="progress-text">40%</strong></div>
           <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+
+          <div class="readiness-mini">
+            <div class="gauge" style="--value:92"><span>92<small>%</small></span></div>
+            <div><strong>BATTALION READINESS</strong><p>Mission capable and prepared to execute.</p></div>
+          </div>
+
           <a class="button primary compact" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">Continue Mission</a>
         </article>
 
@@ -95,6 +101,17 @@
       </div>
     </section>
 
+
+    <section class="stats-band" aria-label="Battalion achievements">
+      <div class="wrap stats-grid">
+        <article><strong data-count="120">120</strong><span>CADETS</span></article>
+        <article><strong data-count="7">7</strong><span>TEAMS & PROGRAMS</span></article>
+        <article><strong>2X</strong><span>JLAB NATIONALS</span></article>
+        <article><strong>2026–28</strong><span>MILITARY STAR SCHOOL</span></article>
+        <article><strong>$342K</strong><span>SCHOLARSHIPS TRACKED</span></article>
+      </div>
+    </section>
+
     <section class="section dashboard">
       <div class="wrap">
         <div class="section-head">
@@ -102,13 +119,13 @@
           <p>Move directly to the Canvas tools used throughout the course.</p>
         </div>
         <div class="card-grid">
-          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top"><span class="number">01</span><span class="icon">▦</span><h3>Modules</h3><p>Lessons, weekly content, and learning sequence.</p><b>Open Modules →</b></a>
-          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/assignments" target="_top"><span class="number">02</span><span class="icon">✓</span><h3>Assignments</h3><p>Requirements, due dates, and submissions.</p><b>Open Assignments →</b></a>
-          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/quizzes" target="_top"><span class="number">03</span><span class="icon">◎</span><h3>Quizzes</h3><p>Knowledge checks, assessments, and reviews.</p><b>Open Quizzes →</b></a>
-          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/announcements" target="_top"><span class="number">04</span><span class="icon">⌁</span><h3>Announcements</h3><p>Course updates, reminders, and mission changes.</p><b>View Announcements →</b></a>
-          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/discussion_topics" target="_top"><span class="number">05</span><span class="icon">◫</span><h3>Discussions</h3><p>Leadership dialogue, reflections, and peer response.</p><b>Open Discussions →</b></a>
-          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/assignments/syllabus" target="_top"><span class="number">06</span><span class="icon">≡</span><h3>Syllabus</h3><p>Course standards, expectations, and policies.</p><b>View Syllabus →</b></a>
-          <a class="command-card wide" href="https://jacksonps.instructure.com/courses/90257/pages/resources" target="_top"><span class="number">07</span><span class="icon">◇</span><h3>Cadet Resources</h3><p>Study tools, leadership references, forms, and support materials.</p><b>Open Resources →</b></a>
+          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top"><span class="number">01</span><span class="card-status ready">READY</span><span class="icon">▦</span><h3>Modules</h3><p>Lessons, weekly content, and learning sequence.</p><b>Open Modules →</b></a>
+          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/assignments" target="_top"><span class="number">02</span><span class="card-status active">ACTIVE</span><span class="icon">✓</span><h3>Assignments</h3><p>Requirements, due dates, and submissions.</p><b>Open Assignments →</b></a>
+          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/quizzes" target="_top"><span class="number">03</span><span class="card-status ready">READY</span><span class="icon">◎</span><h3>Quizzes</h3><p>Knowledge checks, assessments, and reviews.</p><b>Open Quizzes →</b></a>
+          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/announcements" target="_top"><span class="number">04</span><span class="card-status new">NEW</span><span class="icon">⌁</span><h3>Announcements</h3><p>Course updates, reminders, and mission changes.</p><b>View Announcements →</b></a>
+          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/discussion_topics" target="_top"><span class="number">05</span><span class="card-status active">ACTIVE</span><span class="icon">◫</span><h3>Discussions</h3><p>Leadership dialogue, reflections, and peer response.</p><b>Open Discussions →</b></a>
+          <a class="command-card" href="https://jacksonps.instructure.com/courses/90257/assignments/syllabus" target="_top"><span class="number">06</span><span class="card-status reference">REFERENCE</span><span class="icon">≡</span><h3>Syllabus</h3><p>Course standards, expectations, and policies.</p><b>View Syllabus →</b></a>
+          <a class="command-card wide" href="https://jacksonps.instructure.com/courses/90257/pages/resources" target="_top"><span class="number">07</span><span class="card-status reference">REFERENCE</span><span class="icon">◇</span><h3>Cadet Resources</h3><p>Study tools, leadership references, forms, and support materials.</p><b>Open Resources →</b></a>
         </div>
       </div>
     </section>
@@ -177,7 +194,7 @@
     <section class="section explore">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">VERSION 4.0 FOUNDATION</p><h2>Explore the Battalion</h2></div>
+          <div><p class="eyebrow">BATTALION NETWORK</p><h2>Explore the Battalion</h2></div>
           <p>Team pages are prepared as the next expansion of the Digital Leadership Academy.</p>
         </div>
         <div class="team-grid">
@@ -219,6 +236,6 @@
     </section>
   </main>
 
-  <footer><div class="wrap footer-inner"><div><strong>CALLAWAY HIGH SCHOOL JROTC</strong><p>4th Battalion · Chargers</p></div><p>LET 3 — The Supervising Leader · Version 3.0+</p></div></footer>
+  <footer><div class="wrap footer-inner"><div><strong>CALLAWAY HIGH SCHOOL JROTC</strong><p>4th Battalion · Chargers</p></div><p>LET 3 — The Supervising Leader · Version 3.1</p></div></footer>
 </body>
 </html>
