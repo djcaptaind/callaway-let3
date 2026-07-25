@@ -24,69 +24,170 @@
 </div></div></nav>
 
 
+
 <section class="command-console" id="main">
   <div class="wrap">
     <div class="console-heading">
       <div>
         <p class="eyebrow">CALLAWAY HIGH SCHOOL · 4TH BATTALION</p>
         <h1>Digital Command Center</h1>
-        <p>Mission access, course operations, readiness, and battalion intelligence in one operational view.</p>
+        <p>Mission access, readiness, alerts, course operations, and battalion intelligence in one operational view.</p>
       </div>
       <a class="btn primary console-main-action" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">Continue Current Mission</a>
     </div>
 
-    <div class="console-status-grid">
-      <article class="console-status-card mission">
-        <span class="console-label">CURRENT OPERATION</span>
-        <strong><span id="mission-code">MISSION 00</span> — <span id="mission-title">Report for Duty</span></strong>
-        <p>Complete battalion reception, verify course access, and earn clearance for the next mission.</p>
-        <div class="progress-meta"><span>Mission Progress</span><b id="mission-progress">40%</b></div>
-        <div class="progress"><i id="mission-bar"></i></div>
-      </article>
-
-      <article class="console-status-card">
-        <span class="console-label">BATTALION READINESS</span>
-        <div class="readiness-wrap">
-          <div class="gauge" style="--v:92"><span>92<small>%</small></span></div>
-          <div><strong>Mission Ready</strong><p>Prepared to execute the standard.</p></div>
+    <div class="mission-command-grid">
+      <article class="command-component mission-component">
+        <div class="component-head">
+          <span class="component-label">CURRENT OPERATION</span>
+          <span class="status-badge active">ACTIVE</span>
+        </div>
+        <div class="mission-component-body">
+          <div>
+            <p class="mission-code" id="mission-code">MISSION 00</p>
+            <h2 id="mission-title">Report for Duty</h2>
+            <p>Complete battalion reception, verify course access, and earn clearance for the next mission.</p>
+          </div>
+          <div class="mission-next">
+            <span>NEXT REQUIREMENT</span>
+            <strong>Battalion Readiness Assessment</strong>
+          </div>
+        </div>
+        <div class="mission-progress-row">
+          <div class="progress-copy">
+            <span>MISSION PROGRESS</span>
+            <strong id="mission-progress">40% COMPLETE</strong>
+          </div>
+          <div class="progress modern-progress"><i id="mission-bar"></i></div>
         </div>
       </article>
 
-      <article class="console-status-card">
-        <span class="console-label">NEXT MAJOR OPERATION</span>
-        <strong id="countdown-name">Western Regional Drill</strong>
+      <article class="command-component intent-component">
+        <div class="component-head">
+          <span class="component-label">COMMANDER'S INTENT</span>
+          <span class="status-badge priority">PRIORITY</span>
+        </div>
+        <blockquote>Every cadet leaves today's class better than they entered.</blockquote>
+        <p class="signature">— LTC DERRICK DAVIS</p>
+      </article>
+    </div>
+
+    <div class="operational-cards">
+      <article class="command-component compact-component">
+        <div class="component-head">
+          <span class="component-label">BATTALION READINESS</span>
+          <span class="status-badge ready">MISSION READY</span>
+        </div>
+        <div class="readiness-wrap">
+          <div class="gauge" style="--v:92"><span>92<small>%</small></span></div>
+          <div><strong>Operational</strong><p>Prepared to execute the standard.</p></div>
+        </div>
+      </article>
+
+      <article class="command-component compact-component">
+        <div class="component-head">
+          <span class="component-label">NEXT MAJOR OPERATION</span>
+          <span class="status-badge live">LIVE</span>
+        </div>
+        <strong class="countdown-title" id="countdown-name">Western Regional Drill</strong>
         <div class="countdown">
           <div><strong id="days">00</strong><span>DAYS</span></div>
           <div><strong id="hours">00</strong><span>HRS</span></div>
           <div><strong id="minutes">00</strong><span>MIN</span></div>
           <div><strong id="seconds">00</strong><span>SEC</span></div>
         </div>
-        <p id="countdown-display">25 OCTOBER 2026</p>
+        <p class="countdown-date" id="countdown-display">25 OCTOBER 2026</p>
       </article>
 
-      <article class="console-status-card alert-card">
-        <span class="console-label">PRIORITY ALERT</span>
+      <article class="command-component compact-component alert-component">
+        <div class="component-head">
+          <span class="component-label">PRIORITY ALERT</span>
+          <span class="status-badge new">NEW</span>
+        </div>
         <strong>Review the Latest Announcement</strong>
         <p>Confirm schedule changes, uniform requirements, and upcoming deadlines before beginning work.</p>
         <a href="https://jacksonps.instructure.com/courses/90257/announcements" target="_top">Open Announcements →</a>
+      </article>
+
+      <article class="command-component compact-component orders-component">
+        <div class="component-head">
+          <span class="component-label">TODAY'S ORDERS</span>
+          <span class="status-badge active">EXECUTE</span>
+        </div>
+        <ul>
+          <li>Read the newest announcement.</li>
+          <li>Complete the next unlocked requirement.</li>
+          <li>Review grades and feedback.</li>
+        </ul>
       </article>
     </div>
 
     <div class="console-dashboard" id="dashboard">
       <div class="console-section-title">
-        <div><p class="eyebrow">PRIMARY OPERATIONS</p><h2>Command Dashboard</h2></div>
-        <p>Everything cadets need most, visible immediately.</p>
+        <div>
+          <p class="eyebrow">PRIMARY OPERATIONS</p>
+          <h2>Command Dashboard</h2>
+        </div>
+        <p>Cadets can reach every essential course tool without searching through Canvas menus.</p>
       </div>
-      <div class="console-tile-grid">
-        <a class="console-tile primary-tile" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top"><span class="tile-icon">▦</span><span><b>Modules</b><small>Lessons and mission sequence</small></span><em>READY</em></a>
-        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/assignments" target="_top"><span class="tile-icon">✓</span><span><b>Assignments</b><small>Requirements and submissions</small></span><em>ACTIVE</em></a>
-        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/quizzes" target="_top"><span class="tile-icon">◎</span><span><b>Quizzes</b><small>Checks and assessments</small></span><em>READY</em></a>
-        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/announcements" target="_top"><span class="tile-icon">⌁</span><span><b>Announcements</b><small>Updates and mission changes</small></span><em class="new-state">NEW</em></a>
-        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/discussion_topics" target="_top"><span class="tile-icon">◫</span><span><b>Discussions</b><small>Leadership dialogue</small></span><em>ACTIVE</em></a>
-        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/assignments/syllabus" target="_top"><span class="tile-icon">≡</span><span><b>Syllabus</b><small>Standards and policies</small></span><em>REFERENCE</em></a>
-        <a class="console-tile" href="https://jacksonps.instructure.com/calendar" target="_top"><span class="tile-icon">◈</span><span><b>Calendar</b><small>Dates and deadlines</small></span><em>LIVE</em></a>
-        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/pages/resources" target="_top"><span class="tile-icon">◇</span><span><b>Resources</b><small>References and support</small></span><em>REFERENCE</em></a>
+
+      <div class="console-tile-grid premium-tiles">
+        <a class="console-tile primary-tile" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">
+          <span class="tile-icon">▦</span>
+          <span><b>Modules</b><small>12 lessons · mission sequence</small></span>
+          <em>READY</em>
+          <i>Continue →</i>
+        </a>
+        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/assignments" target="_top">
+          <span class="tile-icon">✓</span>
+          <span><b>Assignments</b><small>Requirements and submissions</small></span>
+          <em>ACTIVE</em>
+          <i>Open →</i>
+        </a>
+        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/quizzes" target="_top">
+          <span class="tile-icon">◎</span>
+          <span><b>Quizzes</b><small>Checks and assessments</small></span>
+          <em>READY</em>
+          <i>Open →</i>
+        </a>
+        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/announcements" target="_top">
+          <span class="tile-icon">⌁</span>
+          <span><b>Announcements</b><small>Updates and mission changes</small></span>
+          <em class="new-state">NEW</em>
+          <i>Read →</i>
+        </a>
+        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/discussion_topics" target="_top">
+          <span class="tile-icon">◫</span>
+          <span><b>Discussions</b><small>Leadership dialogue</small></span>
+          <em>ACTIVE</em>
+          <i>Open →</i>
+        </a>
+        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/assignments/syllabus" target="_top">
+          <span class="tile-icon">≡</span>
+          <span><b>Syllabus</b><small>Standards and policies</small></span>
+          <em>REFERENCE</em>
+          <i>View →</i>
+        </a>
+        <a class="console-tile" href="https://jacksonps.instructure.com/calendar" target="_top">
+          <span class="tile-icon">◈</span>
+          <span><b>Calendar</b><small>Dates and deadlines</small></span>
+          <em>LIVE</em>
+          <i>Open →</i>
+        </a>
+        <a class="console-tile" href="https://jacksonps.instructure.com/courses/90257/pages/resources" target="_top">
+          <span class="tile-icon">◇</span>
+          <span><b>Resources</b><small>References and support</small></span>
+          <em>REFERENCE</em>
+          <i>Open →</i>
+        </a>
       </div>
+    </div>
+
+    <div class="intelligence-strip">
+      <article><strong class="counter" data-target="120">120</strong><span>ACTIVE CADETS</span></article>
+      <article><strong>2X</strong><span>JLAB NATIONALS</span></article>
+      <article><strong>2026–28</strong><span>MILITARY STAR SCHOOL</span></article>
+      <article><strong>$342K</strong><span>SCHOLARSHIPS TRACKED</span></article>
     </div>
   </div>
 </section>
@@ -112,16 +213,6 @@
   </div>
 </section>
 
-<section class="section orders"><div class="wrap orders-grid">
-<article class="open-panel"><p class="section-kicker">TODAY'S ORDERS</p><h3>Execute the Standard</h3><ul class="checklist"><li>Read the newest announcement.</li><li>Complete the next unlocked requirement.</li><li>Review grades and feedback.</li><li>Prepare for uniform or training requirements.</li></ul></article>
-<article class="open-panel"><p class="section-kicker">COMMANDER'S INTENT</p><p class="quote">Every cadet leaves today's class better than they entered.</p><p class="signature">— LTC DERRICK DAVIS</p></article>
-<article class="open-panel"><p class="section-kicker">LEADERSHIP CHALLENGE</p><h3>Strengthen One Teammate</h3><p>Recognize a specific improvement, help solve a problem, or coach a cadet respectfully.</p></article>
-</div></section>
-
-<section class="stats"><div class="wrap stats-grid">
-<article><strong>120</strong><span>CADETS</span></article><article><strong>7</strong><span>TEAMS & PROGRAMS</span></article><article><strong>2X</strong><span>JLAB NATIONALS</span></article><article><strong>2026–28</strong><span>MILITARY STAR SCHOOL</span></article><article><strong>$342K</strong><span>SCHOLARSHIPS TRACKED</span></article>
-</div></section>
-
 <section class="section"><div class="wrap spotlight"><div class="spotlight-media"></div><article class="spotlight-copy"><p class="eyebrow">CADET RECOGNITION</p><h2>Cadet Spotlight</h2><p class="spotlight-name">CADET NAME</p><p><strong>Outstanding Leadership</strong></p><p>Recognize uniform excellence, service, academic achievement, improvement, or team leadership.</p></article></div></section>
 
 <section class="section" id="teams"><div class="wrap"><div class="section-head"><div><p class="eyebrow">EXPLORE THE BATTALION</p><h2>Teams & Programs</h2></div><p>Separate Version 4.0 pages are included for each major battalion team.</p></div>
@@ -143,5 +234,5 @@
 </div></div></section>
 </main>
 
-<footer class="footer"><div class="wrap"><div><strong>CALLAWAY HIGH SCHOOL JROTC</strong><p>4th Battalion · Chargers</p></div><p>LET 3 Digital Leadership Academy · Version 5.0 Sprint 1</p></div></footer>
+<footer class="footer"><div class="wrap"><div><strong>CALLAWAY HIGH SCHOOL JROTC</strong><p>4th Battalion · Chargers</p></div><p>LET 3 Digital Leadership Academy · Version 5.0 Sprint 2</p></div></footer>
 </body></html>
