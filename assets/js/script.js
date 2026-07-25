@@ -57,11 +57,43 @@ function animateCounters(){
 document.addEventListener("DOMContentLoaded", animateCounters);
 
 function updateSchoolCountdown(){
-  const target=new Date("2026-07-29T08:00:00-05:00").getTime();
-  let d=Math.max(0,target-Date.now());
-  setText("school-days",String(Math.floor(d/86400000)).padStart(2,"0"));
-  setText("school-hours",String(Math.floor((d%86400000)/3600000)).padStart(2,"0"));
-  setText("school-minutes",String(Math.floor((d%3600000)/60000)).padStart(2,"0"));
+  const event = {
+    name: "Adventure Training Unit",
+    target: "2026-09-19T08:00:00-05:00",
+    display: "19 SEPTEMBER 2026",
+    status: "Prepare for Adventure Training Unit."
+  };
+
+  const target = new Date(event.target).getTime();
+  const now = Date.now();
+  const distance = target - now;
+
+  const nameEl = document.getElementById("event-name");
+  const dateEl = document.getElementById("event-display-date");
+  const statusEl = document.getElementById("event-status-text");
+  if(nameEl) nameEl.textContent = event.name.toUpperCase();
+  if(dateEl) dateEl.textContent = event.display;
+  if(statusEl) statusEl.textContent = event.status;
+
+  const daysEl = document.getElementById("school-days");
+  const hoursEl = document.getElementById("school-hours");
+  const minutesEl = document.getElementById("school-minutes");
+
+  if(distance <= 0){
+    if(daysEl) daysEl.textContent = "00";
+    if(hoursEl) hoursEl.textContent = "00";
+    if(minutesEl) minutesEl.textContent = "00";
+    if(statusEl) statusEl.textContent = "Event day — execute the mission.";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+
+  if(daysEl) daysEl.textContent = String(days).padStart(2, "0");
+  if(hoursEl) hoursEl.textContent = String(hours).padStart(2, "0");
+  if(minutesEl) minutesEl.textContent = String(minutes).padStart(2, "0");
 }
 document.addEventListener("DOMContentLoaded",()=>{updateSchoolCountdown();setInterval(updateSchoolCountdown,60000);});
 
