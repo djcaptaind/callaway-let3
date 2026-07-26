@@ -1,122 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Callaway Leadership Academy | Army JROTC LET 3</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/academy.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Callaway JROTC Student &amp; Family Learning Hub</title>
+  <meta name="description" content="Callaway High School JROTC learning, assignments, events, teams, resources, and program highlights.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html">
-      <div class="brand-mark">CLA</div>
-      <div class="brand-copy">
-        <strong>CALLAWAY LEADERSHIP ACADEMY</strong>
-        <small>Army JROTC LET 3</small>
-      </div>
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Callaway JROTC home">
+      <img class="brand-logo" src="images/homepage/callaway-jrotc-logo.png" alt="Callaway Chargers JROTC logo">
+      <span class="brand-copy">
+        <strong>CALLAWAY JROTC</strong>
+        <small>Student &amp; Family Learning Hub</small>
+      </span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="units/unit-1/lesson-1.html">Curriculum</a>
-      <a href="academy/cadet-center/index.html">Cadet Center</a>
-      <a href="academy/parent-center/index.html">Parent Center</a>
-      <a href="academy/college-career/index.html">College & Career</a>
-      <a href="academy/media-center/index.html">Media</a>
+
+    <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#learning">Learning</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#events">Events</a>
+      <a href="battalion/our-battalion.html">About JROTC</a>
+      <a href="media/gallery.html">Photos</a>
+      <a class="canvas-button" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">Open Canvas</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <span class="eyebrow">Callaway High School Army JROTC</span>
-    <h1>Student & Family Learning Hub</h1>
-    <p>Army JROTC LET 3 resources, weekly learning, announcements, upcoming events, and program opportunities—all in one place.</p>
-    <div class="actions">
-      <a class="btn btn-primary" href="units/unit-1/lesson-1.html">Continue Learning</a>
-      <a class="btn btn-secondary" href="#weekly-updates">View Weekly Updates</a>
-    </div>
-  </div>
-</section>
-
-<main>
-  <section aria-label="Academy quick links">
-    <div class="section-head">
-      <div>
-        <h2>Explore the Academy</h2>
-        <p>Quick access for cadets, parents, and families.</p>
+<main id="main">
+  <section class="featured" id="home">
+    <div class="featured-overlay"></div>
+    <img class="hero-watermark" src="images/homepage/callaway-jrotc-logo.png" alt="" aria-hidden="true">
+    <div class="featured-content">
+      <span class="featured-label">FEATURED THIS WEEK</span>
+      <h1>Welcome to Callaway JROTC</h1>
+      <p class="featured-tagline">Developing leaders. Building character. Preparing students for success.</p>
+      <p class="featured-summary">Start with the current lesson, review this week’s assignments, and check upcoming program events.</p>
+      <div class="featured-actions">
+        <a class="button button-primary" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">▶ Continue Learning</a>
+        <a class="button button-secondary" href="#weekly-update">More Information</a>
       </div>
-    </div>
-    <div class="grid grid-4 academy-quick-links">
-      <a class="card" href="academy/cadet-center/index.html"><div class="icon">C</div><h3>Cadet Center</h3><p>Uniforms, ranks, ribbons, teams, and cadet resources.</p><span class="meta">Open Center →</span></a>
-      <a class="card" href="academy/parent-center/index.html"><div class="icon">P</div><h3>Parent Center</h3><p>Schedules, forms, FAQs, contacts, and family information.</p><span class="meta">Open Center →</span></a>
-      <a class="card" href="academy/college-career/index.html"><div class="icon">C+</div><h3>College & Career</h3><p>ACT, ASVAB, ROTC, scholarships, and career planning.</p><span class="meta">Open Center →</span></a>
-      <a class="card" href="academy/media-center/index.html"><div class="icon">M</div><h3>Media Center</h3><p>Photos, videos, camps, competitions, and recognition.</p><span class="meta">Open Center →</span></a>
+      <div class="featured-meta">
+        <span>LET 3</span>
+        <span>2026–2027</span>
+        <span>Leadership Education</span>
+      </div>
     </div>
   </section>
 
-  <section id="weekly-updates">
-    <div class="section-head">
-      <div>
-        <h2>Weekly Updates</h2>
-        <p>Announcements and upcoming events remain part of the main homepage.</p>
-      </div>
+  <section class="event-banner" id="events">
+    <div class="event-copy">
+      <span class="section-kicker">NEXT PROGRAM EVENT</span>
+      <h2 id="event-name">Adventure Training Unit</h2>
+      <p><strong id="event-date">19 September 2026</strong> · Students will receive details and permission information through Canvas.</p>
     </div>
-    <div class="grid grid-2">
-      <article class="content-card update-panel">
-        <span class="kicker">Announcements</span>
-        <h2>Latest Announcements</h2>
-        <div class="update-item"><strong>Welcome to LET 3</strong><p>Review the Week 1 module and complete each item in order.</p></div>
-        <div class="update-item"><strong>Canvas Check</strong><p>Cadets should check Canvas daily for assignments, due dates, and class updates.</p></div>
-        <div class="update-item"><strong>Family Access</strong><p>Parents and guardians can use the Parent Center for schedules, forms, and program information.</p></div>
-      </article>
-      <article class="content-card update-panel">
-        <span class="kicker">Upcoming Events</span>
-        <h2>What’s Ahead</h2>
-        <div class="event-row"><div class="event-date"><strong>W1</strong><span>Week 1</span></div><div><strong>Course Orientation</strong><p>Canvas navigation, expectations, and leadership goals.</p></div></div>
-        <div class="event-row"><div class="event-date"><strong>TUE</strong><span>Uniform</span></div><div><strong>Uniform Day</strong><p>Follow the published weekly uniform schedule.</p></div></div>
-        <div class="event-row"><div class="event-date"><strong>FRI</strong><span>Due</span></div><div><strong>Week 1 Reflection</strong><p>Submit the graded reflection through Canvas.</p></div></div>
-      </article>
+    <div class="countdown" aria-label="Countdown to Adventure Training Unit">
+      <div><strong id="event-days">00</strong><span>Days</span></div>
+      <div><strong id="event-hours">00</strong><span>Hours</span></div>
+      <div><strong id="event-minutes">00</strong><span>Minutes</span></div>
+      <div><strong id="event-seconds">00</strong><span>Seconds</span></div>
     </div>
   </section>
 
-  <section id="this-week">
-    <div class="section-head">
-      <div>
-        <h2>This Week in LET 3</h2>
-        <p>Current instruction and the next step for students.</p>
-      </div>
+  <section class="weekly-update" id="weekly-update">
+    <div class="weekly-heading">
+      <span class="section-kicker">INSTRUCTOR’S WEEKLY MESSAGE</span>
+      <span class="week-label">WEEK 1 · SY 2026–2027</span>
     </div>
-    <div class="content-card feature">
+    <h2>Welcome, Cadets and Families.</h2>
+    <p>This week, students will learn classroom procedures, review JROTC expectations, confirm Canvas access, and begin their first leadership lesson.</p>
+    <div class="weekly-priorities">
+      <span>Complete course orientation</span>
+      <span>Review classroom expectations</span>
+      <span>Verify Canvas access</span>
+      <span>Check upcoming dates</span>
+    </div>
+  </section>
+
+  <section class="rail-section" id="learning">
+    <div class="rail-heading">
       <div>
-        <span class="eyebrow" style="background:#eef4ff;color:#0b3a82;border-color:#d5e1f3">Unit 1 · Lesson 1</span>
-        <h2>Welcome to LET 3</h2>
-        <p>Learn how the course works, understand expectations, identify personal leadership strengths, and begin setting goals for the year.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="units/unit-1/lesson-1.html">Start Lesson 1</a>
+        <span class="section-kicker">PICK UP WHERE YOU LEFT OFF</span>
+        <h2>Continue Learning</h2>
+      </div>
+      <a href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">View all lessons →</a>
+    </div>
+
+    <div class="content-rail">
+      <a class="content-card featured-card" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">
+        <div class="card-visual card-unit-one"><span>UNIT 1</span></div>
+        <div class="card-body">
+          <h3>Getting Started in JROTC</h3>
+          <p>Course orientation, expectations, and student responsibilities.</p>
+          <div class="progress-line"><i style="width:40%"></i></div>
+          <small>40% complete</small>
         </div>
-      </div>
-      <div class="stat-row">
-        <div class="stat"><strong>1</strong><span>Current Unit</span></div>
-        <div class="stat"><strong>3</strong><span>Learning Goals</span></div>
-        <div class="stat"><strong>20</strong><span>Approx. Minutes</span></div>
-      </div>
+      </a>
+
+      <a class="content-card" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">
+        <div class="card-visual card-leadership"><span>LEADERSHIP</span></div>
+        <div class="card-body">
+          <h3>The Supervising Leader</h3>
+          <p>Learn how effective leaders guide and support a team.</p>
+          <small>Next lesson</small>
+        </div>
+      </a>
+
+      <a class="content-card" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">
+        <div class="card-visual card-teamwork"><span>TEAMWORK</span></div>
+        <div class="card-body">
+          <h3>Building Strong Teams</h3>
+          <p>Communication, trust, accountability, and shared goals.</p>
+          <small>Coming soon</small>
+        </div>
+      </a>
+
+      <a class="content-card" href="https://jacksonps.instructure.com/courses/90257/modules" target="_top">
+        <div class="card-visual card-decisions"><span>DECISIONS</span></div>
+        <div class="card-body">
+          <h3>Responsible Decision-Making</h3>
+          <p>Use sound judgment to solve problems and make choices.</p>
+          <small>Coming soon</small>
+        </div>
+      </a>
     </div>
   </section>
 
-  <section>
-    <div class="section-head"><div><h2>Program Highlights</h2><p>Leadership opportunities beyond daily classroom instruction.</p></div></div>
-    <div class="grid grid-3">
-      <div class="card"><div class="icon">L</div><h3>Leadership Development</h3><p>Authentic roles, team responsibilities, and reflective growth.</p></div>
-      <div class="card"><div class="icon">T</div><h3>Teams & Activities</h3><p>Drill, Color Guard, Cadet Challenge, Saber Team, JLAB, STEM, and more.</p></div>
-      <div class="card"><div class="icon">F</div><h3>College & Career Opportunities</h3><p>College, career, service, citizenship, and life-skills preparation.</p></div>
+  <section class="rail-section" id="assignments">
+    <div class="rail-heading">
+      <div>
+        <span class="section-kicker">STAY ON TRACK</span>
+        <h2>This Week’s Schoolwork</h2>
+      </div>
+      <a href="https://jacksonps.instructure.com/courses/90257/assignments" target="_top">View assignments →</a>
+    </div>
+
+    <div class="quick-rail">
+      <a class="quick-card" href="https://jacksonps.instructure.com/courses/90257/assignments" target="_top">
+        <span class="quick-icon">✓</span>
+        <div><strong>Assignments</strong><small>View directions and due dates</small></div>
+        <em>2 due soon</em>
+      </a>
+      <a class="quick-card" href="https://jacksonps.instructure.com/courses/90257/quizzes" target="_top">
+        <span class="quick-icon">?</span>
+        <div><strong>Quizzes</strong><small>Knowledge checks and assessments</small></div>
+        <em>1 available</em>
+      </a>
+      <a class="quick-card" href="https://jacksonps.instructure.com/courses/90257/announcements" target="_top">
+        <span class="quick-icon">!</span>
+        <div><strong>Announcements</strong><small>Important class updates</small></div>
+        <em>1 new</em>
+      </a>
+      <a class="quick-card" href="https://jacksonps.instructure.com/courses/90257/grades" target="_top">
+        <span class="quick-icon">A</span>
+        <div><strong>Grades</strong><small>Review progress and feedback</small></div>
+        <em>Open</em>
+      </a>
+    </div>
+  </section>
+
+  <section class="rail-section">
+    <div class="rail-heading">
+      <div>
+        <span class="section-kicker">EXPLORE THE PROGRAM</span>
+        <h2>Teams & Activities</h2>
+      </div>
+    </div>
+
+    <div class="content-rail activity-rail">
+      <a class="poster-card drill" href="teams/drill.html"><span>DRILL TEAM</span><small>Precision · Discipline · Teamwork</small></a>
+      <a class="poster-card color-guard" href="teams/color-guard.html"><span>COLOR GUARD</span><small>Honor · Ceremony · Service</small></a>
+      <a class="poster-card raiders" href="teams/raiders.html"><span>RAIDERS</span><small>Fitness · Resilience · Adventure</small></a>
+      <a class="poster-card jlab" href="teams/jlab.html"><span>JLAB</span><small>Academics · Leadership · Competition</small></a>
+      <a class="poster-card saber" href="teams/saber-team.html"><span>SABER TEAM</span><small>Tradition · Skill · Performance</small></a>
+    </div>
+  </section>
+
+  <section class="rail-section">
+    <div class="rail-heading">
+      <div>
+        <span class="section-kicker">CALLAWAY JROTC</span>
+        <h2>Program Highlights</h2>
+      </div>
+    </div>
+
+    <div class="highlight-grid">
+      <article><strong>120</strong><span>Cadets Enrolled</span><small>Students developing leadership skills</small></article>
+      <article><strong>$342K</strong><span>Scholarships Tracked</span><small>College and career opportunities</small></article>
+      <article><strong>2X</strong><span>JLAB Nationals</span><small>Two consecutive national appearances</small></article>
+      <article><strong>2026–28</strong><span>Military Star School</span><small>Recognized for program excellence</small></article>
+    </div>
+  </section>
+
+  <section class="rail-section family-section">
+    <div class="family-card">
+      <div>
+        <span class="section-kicker">FOR STUDENTS & FAMILIES</span>
+        <h2>Everything You Need in One Place</h2>
+        <p>Use Canvas to view lessons, assignments, announcements, grades, and teacher feedback. This homepage provides a simple overview of the course and JROTC program.</p>
+      </div>
+      <div class="family-actions">
+        <a class="button button-primary" href="https://jacksonps.instructure.com/courses/90257" target="_top">Open the Course</a>
+        <a class="button button-secondary" href="battalion/our-battalion.html">Learn About JROTC</a>
+      </div>
     </div>
   </section>
 </main>
 
-<footer><div class="footer-inner"><div><strong>Callaway Leadership Academy</strong><br><small>Powered by Callaway High School Army JROTC</small></div><small>Army JROTC LET 3 · Jackson, Mississippi</small></div></footer>
+<footer>
+  <div>
+    <strong>Callaway High School JROTC · 4th Battalion</strong>
+    <span>Leadership · Citizenship · Service</span>
+  </div>
+  <small>Student & Family Learning Hub · School Year 2026–2027</small>
+</footer>
 </body>
 </html>
